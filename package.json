@@ -1,0 +1,23 @@
+{
+  "name": "wiki",
+  "version": "1.0.0",
+  "description": "我的第一篇文章，一个不错的开始，加油！",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dydong/wiki.git"
+  },
+  "author": "dyd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dydong/wiki/issues"
+  },
+  "homepage": "https://github.com/dydong/wiki#readme"
+}
