@@ -1,12 +1,6 @@
-# 欢迎
+# LIST
 
 我的第一篇文章，一个不错的开始，加油！
-
-[Home](/) <!-- 跳转到根部的 README.md -->
-
-[list](/list/) <!-- 跳转到 foo 文件夹的 index.html -->
-
-[list - one](/list/one.md) <!-- 具体文件可以使用 .html 结尾 -->
 
 ## 首先熟悉Markdown的语法
 
