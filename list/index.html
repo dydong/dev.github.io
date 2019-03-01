@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>在 CentOS 6.x/7.x 上安装 git 及最新版 | Hello My VuePress</title>
+    <meta name="description" content="Just playing around">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.a41601f5.css" as="style"><link rel="preload" href="/assets/js/app.5a5d4312.js" as="script"><link rel="preload" href="/assets/js/2.10386efb.js" as="script"><link rel="preload" href="/assets/js/6.4768492d.js" as="script"><link rel="prefetch" href="/assets/js/3.9de0119a.js"><link rel="prefetch" href="/assets/js/4.17130ce9.js"><link rel="prefetch" href="/assets/js/5.3d81e72b.js"><link rel="prefetch" href="/assets/js/7.49ed15bb.js"><link rel="prefetch" href="/assets/js/8.07d75059.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a41601f5.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Hello My VuePress</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/list/" class="nav-link router-link-exact-active router-link-active">Guide</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Google
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/list/" class="nav-link router-link-exact-active router-link-active">Guide</a></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Google
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">欢迎</a></li><li><a href="/list/" class="active sidebar-link">在 CentOS 6.x/7.x 上安装 git 及最新版</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/list/#方式一、yum-安装" class="sidebar-link">方式一、yum 安装</a></li><li class="sidebar-sub-header"><a href="/list/#方式二、源码包安装" class="sidebar-link">方式二、源码包安装</a></li></ul></li></ul> </aside> <main class="page"> <div class="content default"><h1 id="在-centos-6-x-7-x-上安装-git-及最新版"><a href="#在-centos-6-x-7-x-上安装-git-及最新版" aria-hidden="true" class="header-anchor">#</a> 在 CentOS 6.x/7.x 上安装 git 及最新版</h1> <h2 id="方式一、yum-安装"><a href="#方式一、yum-安装" aria-hidden="true" class="header-anchor">#</a> 方式一、yum 安装</h2> <div class="language-sh extra-class"><pre class="language-sh"><code>yum info <span class="token function">git</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>Failed to set locale, defaulting to C
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Available Packages
+Name        : git
+Arch        : x86_64
+Version     : 1.8.3.1 &lt;--- 说明：当前系统是 CentOS7.x，在 6.x 上是 1.7.1
+Release     : 12.el7_4
+Size        : 4.4 M
+Repo        : updates/7/x86_64
+Summary     : Fast Version Control System
+URL         : http://git-scm.com/
+License     : GPLv2
+Description : Git is a fast, scalable, distributed revision control system with an
+            : unusually rich command set that provides both high-level operations
+            : and full access to internals.
+            :
+            : The git rpm installs the core tools with minimal dependencies.  To
+            : install all git packages, including tools for integrating with other
+            : SCMs, install the git-all meta-package.
+</code></pre></div><div class="language-sh extra-class"><pre class="language-sh"><code>yum <span class="token function">install</span> -y <span class="token function">git</span>
+</code></pre></div><h2 id="方式二、源码包安装"><a href="#方式二、源码包安装" aria-hidden="true" class="header-anchor">#</a> 方式二、源码包安装</h2> <p>步骤 1. 安装依赖包</p> <div class="language-sh extra-class"><pre class="language-sh"><code>yum <span class="token function">install</span> curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+yum <span class="token function">install</span>  gcc perl-ExtUtils-MakeMaker
+</code></pre></div><p>步骤 2. 卸载旧的 git 版本（如果之前有安装 rpm 包）</p> <div class="language-sh extra-class"><pre class="language-sh"><code>yum remove <span class="token function">git</span>
+</code></pre></div><p>步骤 3. 下载&amp;解压</p> <p>源码文件（当前最新版本 <strong>v2.16.1</strong> @ <strong>2018 年 2 月 9 日</strong>）</p> <ul><li>地址 1：https://www.kernel.org/pub/software/scm/git/</li> <li>地址 2：https://github.com/git/git/release</li></ul> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">cd</span> /usr/src
+<span class="token function">wget</span> https://www.kernel.org/pub/software/scm/git/git-2.5.0.tar.gz
+<span class="token function">tar</span> -zxvf git-2.5.0.tar.gz
+</code></pre></div><p>步骤 4. 编译安装</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">cd</span> git-2.5.0
+<span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git all
+<span class="token function">make</span> prefix<span class="token operator">=</span>/usr/local/git <span class="token function">install</span>
+<span class="token keyword">echo</span> <span class="token string">&quot;export PATH=<span class="token variable">$PATH</span>:/usr/local/git/bin&quot;</span> <span class="token operator">&gt;&gt;</span> /etc/bashrc
+<span class="token function">source</span> /etc/bashrc
+</code></pre></div><p>步骤 5. 检查 git 版本</p> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">git</span> --version
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>git version 2.5.0
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>注意：如果安装完查看版本不是我们安装的最新版，请重新执行下面的操作</p></div> <div class="language-sh extra-class"><pre class="language-sh"><code>yum remove -y <span class="token function">git</span>
+<span class="token function">source</span> /etc/bashrc
+<span class="token function">git</span> --version
+</code></pre></div><p>参考：</p> <p>https://github.com/git/git/blob/master/INSTALL</p> <p>http://stackoverflow.com/questions/21820715/
+how-to-install-latest-version
+-of-git-on-centos-6-x-7-x</p> <p>© 著作权归作者所有</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/" class="prev router-link-active">
+          欢迎
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.5a5d4312.js" defer></script><script src="/assets/js/2.10386efb.js" defer></script><script src="/assets/js/6.4768492d.js" defer></script>
+  </body>
+</html>
