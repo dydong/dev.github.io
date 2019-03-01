@@ -7,6 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "now-build": "npm run build && mv docs/.vuepress/dist dist",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },

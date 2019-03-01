@@ -4,7 +4,7 @@
 
 [Home](/) <!-- 跳转到根部的 README.md -->
 
-[list](/list/) <!-- 跳转到 foo 文件夹的 index.html -->
+[list](/list/) <!-- 跳转到 list 文件夹的 index.html -->
 
 [list - one](/list/one.md) <!-- 具体文件可以使用 .html 结尾 -->
 

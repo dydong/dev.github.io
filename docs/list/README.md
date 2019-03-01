@@ -1,95 +1,98 @@
-# LIST
+# 在 CentOS 6.x/7.x 上安装 git 及最新版
 
-我的第一篇文章，一个不错的开始，加油！
+## 方式一、yum 安装
 
-## 首先熟悉Markdown的语法
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```sh
+yum info git
 ```
 
 ```
+Failed to set locale, defaulting to C
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+Available Packages
+Name        : git
+Arch        : x86_64
+Version     : 1.8.3.1 <--- 说明：当前系统是 CentOS7.x，在 6.x 上是 1.7.1
+Release     : 12.el7_4
+Size        : 4.4 M
+Repo        : updates/7/x86_64
+Summary     : Fast Version Control System
+URL         : http://git-scm.com/
+License     : GPLv2
+Description : Git is a fast, scalable, distributed revision control system with an
+            : unusually rich command set that provides both high-level operations
+            : and full access to internals.
+            :
+            : The git rpm installs the core tools with minimal dependencies.  To
+            : install all git packages, including tools for integrating with other
+            : SCMs, install the git-all meta-package.
+```
+
+```sh
+yum install -y git
+```
+
+## 方式二、源码包安装
+
+步骤 1. 安装依赖包
+
+```sh
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+yum install  gcc perl-ExtUtils-MakeMaker
+```
+
+步骤 2. 卸载旧的 git 版本（如果之前有安装 rpm 包）
+
+```sh
+yum remove git
+```
+
+步骤 3. 下载&解压
+
+源码文件（当前最新版本 **v2.16.1** @ **2018 年 2 月 9 日**）
+
+- 地址 1：https://www.kernel.org/pub/software/scm/git/
+- 地址 2：https://github.com/git/git/release
+
+```sh
+cd /usr/src
+wget https://www.kernel.org/pub/software/scm/git/git-2.5.0.tar.gz
+tar -zxvf git-2.5.0.tar.gz
+```
+
+步骤 4. 编译安装
+
+```sh
+cd git-2.5.0
+make prefix=/usr/local/git all
+make prefix=/usr/local/git install
+echo "export PATH=$PATH:/usr/local/git/bin" >> /etc/bashrc
+source /etc/bashrc
+```
+
+步骤 5. 检查 git 版本
+
+```sh
+git --version
+```
+
+`git version 2.5.0`
+
 ::: tip
-This is a tip
-:::
+注意：如果安装完查看版本不是我们安装的最新版，请重新执行下面的操作
+:::one
 
-::: warning
-This is a warning
-:::
-
-::: danger
-This is a dangerous warning
-:::
+```sh
+yum remove -y git
+source /etc/bashrc
+git --version
 ```
 
-::: tip
-This is a tip
-:::
+参考：
 
-::: warning
-This is a warning
-:::
+https://github.com/git/git/blob/master/INSTALL 
 
-::: danger
-This is a dangerous warning
-:::
+http://stackoverflow.com/questions/21820715/how-to-install-latest-version-of-git-on-centos-6-x-7-x
 
-你也可以自定义块中的标题
-
-```
-::: danger STOP
-Danger zone, do not proceed
-:::
-```
-
-::: danger STOP
-Danger zone, do not proceed
-:::
-
-### 代码块中的语法高亮
-
-VuePress 使用了 Prism 来为 markdown 中的代码块实现语法高亮。Prism 支持大量的编程语言，你需要做的只是在代码块的开始倒勾中附加一个有效的语言别名：
-
-```js
-export default {
-  name: 'MyComponent',
-  // ...
-}
-```
-
-```html
-<ul>
-  <li
-    v-for="todo in todos"
-    :key="todo.id"
-  >
-    {{ todo.text }}
-  </li>
-</ul>
-```
-
-### 行号
-
-你可以通过配置来为每个代码块显示行号：
-
-```
-module.exports = {
-  markdown: {
-    lineNumbers: true
-  }
-}
-```
+© 著作权归作者所有
