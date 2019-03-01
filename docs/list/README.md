@@ -76,12 +76,13 @@ source /etc/bashrc
 ```sh
 git --version
 ```
-
-`git version 2.5.0`
+```
+git version 2.5.0
+```
 
 ::: tip
 注意：如果安装完查看版本不是我们安装的最新版，请重新执行下面的操作
-:::one
+:::
 
 ```sh
 yum remove -y git
@@ -93,6 +94,8 @@ git --version
 
 https://github.com/git/git/blob/master/INSTALL 
 
-http://stackoverflow.com/questions/21820715/how-to-install-latest-version-of-git-on-centos-6-x-7-x
+http://stackoverflow.com/questions/21820715/
+how-to-install-latest-version
+-of-git-on-centos-6-x-7-x
 
 © 著作权归作者所有
